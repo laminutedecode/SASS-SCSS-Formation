@@ -1,0 +1,77 @@
+// Les variables permettent de définir des valeurs réutilisables dans votre code CSS, ce qui facilite la maintenance et la mise à jour de votre style.
+
+// Déclaration des variables :
+// Pour déclarer une variable en Sass, vous utilisez le symbole du signe dollar ($) suivi du nom de la variable, puis du signe deux-points (:), et enfin de la valeur que vous souhaitez assigner à la variable. Par exemple :
+
+$couleurs: green;
+
+// Utilisation des variables :
+// Une fois que vous avez déclaré vos variables, vous pouvez les utiliser à la place des valeurs correspondantes dans votre code CSS. Vous pouvez simplement référencer la variable en utilisant son nom précédé du signe dollar. Par exemple :
+
+p {
+    color: $couleurs
+}
+
+// Redéfinition des variables :
+// Les variables Sass sont dynamiques, ce qui signifie que vous pouvez les redéfinir à tout moment dans votre code. Par exemple, si vous souhaitez changer la couleur principale, vous pouvez simplement réassigner une nouvelle valeur à la variable correspondante :
+$couleurs: red;
+
+h1 {
+    color: $couleurs;
+}
+
+// Utilisation des variables dans les calculs :
+// Les variables Sass peuvent également être utilisées dans des calculs CSS. Par exemple, si vous avez défini une variable pour la largeur d'un conteneur et que vous voulez utiliser la moitié de cette valeur dans un autre sélecteur, vous pouvez le faire comme ceci :
+
+$largeur-conteneur: 800px;
+
+.box {
+    background: red;
+    height: 200px;
+    width: $largeur-conteneur / 2;
+  }
+
+  
+// Avec Sass, vous pouvez assigner différents types de valeurs aux variables. Voici les types de valeurs les plus couramment utilisés :
+
+// Couleurs :
+// Sass prend en charge les valeurs de couleur, telles que les codes hexadécimaux (#ff0000), les noms de couleur (red, blue, etc.) et les valeurs RGBA (rgba(255, 0, 0, 0.5)). Par exemple :
+$couleur-principale: #ff0000;
+
+
+// Nombres :
+// Vous pouvez assigner des nombres entiers ou décimaux aux variables Sass. Cela peut être utilisé pour définir des tailles, des marges, des opacités, etc. Par exemple :
+// $taille-police: 16px;
+// $opacite-fond: 0.8;
+
+
+// Chaînes de caractères :
+// Sass vous permet d'assigner des chaînes de caractères à des variables. Cela peut être utile pour stocker du texte, des noms de classe, des URLs, etc. Par exemple :
+$police-titre: "Arial", sans-serif;
+$url-image: "/chemin/vers/image.png";
+
+
+// Listes :
+// Les listes sont une autre forme de valeur que vous pouvez assigner à une variable Sass. Une liste est une collection ordonnée de valeurs séparées par des virgules. Par exemple :
+$couleurs: red, green, blue;
+$marges: 10px, 20px, 30px;
+
+// Booléens :
+// Sass prend en charge les valeurs booléennes (vrai ou faux) qui peuvent être assignées aux variables. Cela peut être utilisé pour activer ou désactiver des fonctionnalités conditionnelles. Par exemple :
+$afficher-bouton: vrai;
+
+// Utiliser des fonctions CSS & operateur
+$font: clamp(18px, 5vw, 80px);
+$font: 20px  / 2px;
+$font: 20px + 15px;
+$font: 20px - 5px;
+
+//  Nous pouvons également les regouper
+$colors: (
+    dark: #333
+    light: #fff
+);
+
+h5 {
+    color: $colors[dark];
+}

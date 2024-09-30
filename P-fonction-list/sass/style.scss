@@ -1,0 +1,30 @@
+// Sass (Syntactically Awesome Style Sheets) propose également une fonctionnalité appelée list qui permet de travailler avec des listes de valeurs dans Sass. Les listes peuvent contenir différents types de données tels que des nombres, des chaînes de caractères ou des couleurs, et elles peuvent être utilisées pour stocker et manipuler des ensembles de valeurs de manière pratique.
+
+// Voici un exemple pour expliquer l'utilisation de list en Sass :
+
+
+$colors: #ff0000, #00ff00, #0000ff;
+$font-sizes: 12px, 14px, 16px, 18px;
+
+header {
+  color: nth($colors, 1); // Récupère la première couleur de la liste
+  font-size: nth($font-sizes, 2); // Récupère la deuxième taille de police de la liste
+}
+
+footer {
+  // set-nth() qui permet de mettre à jour une valeur à une position spécifique dans la liste. Nous utilisons également append() pour ajouter une nouvelle taille de police (20px) à la fin de la liste $font-sizes.
+  $colors: set-nth($colors, 3, #ffff00); // Modifie la troisième couleur de la liste
+  $font-sizes: append($font-sizes, 20px); // Ajoute une nouvelle taille de police à la fin de la liste
+  
+  color: nth($colors, 3); // Récupère la troisième couleur de la liste mise à jour
+  font-size: nth($font-sizes, -1); // Récupère la dernière taille de police de la liste
+}
+// Dans cet exemple, nous utilisons deux listes : $colors qui contient trois couleurs différentes et $font-sizes qui contient quatre tailles de police différentes.
+
+// Dans la classe .header, nous utilisons la fonction nth() pour extraire la première couleur de la liste $colors et l'appliquer comme couleur de texte. De même, nous utilisons nth() pour extraire la deuxième taille de police de la liste $font-sizes et l'appliquer comme taille de police.
+
+// Dans footer, nous modifions la troisième couleur de la liste $colors en utilisant la fonction set-nth() qui permet de mettre à jour une valeur à une position spécifique dans la liste. Nous utilisons également append() pour ajouter une nouvelle taille de police (20px) à la fin de la liste $font-sizes.
+
+// Ensuite, nous utilisons à nouveau nth() pour récupérer la troisième couleur mise à jour de la liste $colors et l'appliquer comme couleur de texte dans la classe .footer. De plus, nous utilisons nth() avec l'indice -1 pour extraire la dernière taille de police de la liste $font-sizes et l'appliquer comme taille de police.
+
+// L'utilisation de list en Sass offre une flexibilité accrue pour manipuler des ensembles de valeurs et effectuer des opérations sur ces listes, ce qui permet d'organiser et de gérer plus facilement les données dans vos stylesheets.

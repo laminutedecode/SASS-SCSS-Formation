@@ -1,0 +1,67 @@
+// Les mixins avec paramètres sont une fonctionnalité puissante de Sass qui permet de créer des règles de style génériques et réutilisables avec des valeurs variables. Les paramètres permettent de personnaliser les mixins en leur fournissant des valeurs spécifiques lors de leur utilisation.
+
+// Voici comment utiliser les mixins avec paramètres en Sass :
+
+// Définition d'une mixin avec paramètres :
+// Pour définir une mixin avec paramètres, vous utilisez le mot-clé @mixin, suivi du nom de la mixin et des paramètres entre parenthèses. Vous pouvez déclarer autant de paramètres que nécessaire, en les séparant par des virgules. Par exemple :
+
+@mixin bouton($couleur, $largeur) {
+  background-color: $couleur;
+  width: $largeur;
+  height: 40px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: #ffffff;
+  text-align: center;
+}
+// Dans cet exemple, nous avons défini une mixin appelée "bouton" avec deux paramètres : $couleur et $largeur. Les règles de style à l'intérieur de la mixin utilisent ces paramètres pour personnaliser la couleur de fond et la largeur du bouton.
+
+// Utilisation d'une mixin avec paramètres :
+// Pour utiliser une mixin avec paramètres, vous utilisez le mot-clé @include, suivi du nom de la mixin et des valeurs des paramètres entre parenthèses. Vous pouvez passer les valeurs directement ou utiliser des variables existantes. Par exemple :
+
+
+button {
+  @include bouton(#ff0000, 120px);
+}
+// Dans cet exemple, nous avons inclus la mixin "bouton" dans le sélecteur .mon-bouton en spécifiant les valeurs des paramètres. Cela appliquera les règles de style définies dans la mixin avec la couleur rouge (#ff0000) et une largeur de 120 pixels.
+
+// Vous pouvez également passer des variables existantes comme valeurs de paramètres :
+
+
+$couleur-principale: #00ff00;
+$largeur-bouton: 200px;
+
+button {
+  @include bouton($couleur-principale, $largeur-bouton);
+}
+// Cela permet de personnaliser les mixins en fonction des besoins spécifiques de chaque sélecteur ou situation.
+
+// Les mixins avec paramètres en Sass permettent d'ajouter de la flexibilité et de la réutilisabilité à vos règles de style. En utilisant des paramètres, vous pouvez personnaliser les mixins pour différentes situations sans avoir à réécrire le code à chaque fois. Cela rend votre code CSS plus modulaire et plus facile à maintenir.
+
+// Avec Sass, vous pouvez également définir des paramètres par défaut pour les mixins. Les paramètres par défaut permettent de spécifier des valeurs qui seront utilisées si aucune valeur n'est fournie lors de l'appel de la mixin. Cela offre une flexibilité supplémentaire lors de l'utilisation des mixins.
+
+// Voici comment utiliser les mixins avec des paramètres par défaut en Sass :
+
+// Définition d'une mixin avec des paramètres par défaut :
+// Pour définir des paramètres par défaut pour une mixin, vous assignez une valeur par défaut à chaque paramètre lors de sa déclaration. Cela se fait en utilisant la syntaxe valeur-par-défaut après le nom du paramètre, suivie d'un signe deux-points (:). Par exemple :
+
+
+@mixin bouton2($couleur: #ff0000, $largeur: 500px) {
+  background-color: $couleur;
+  width: $largeur;
+  height: 40px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: #ffffff;
+  text-align: center;
+}
+// Dans cet exemple, nous avons défini une mixin appelée "bouton" avec deux paramètres : $couleur et $largeur. Les valeurs par défaut sont respectivement #ff0000 (rouge) pour la couleur et 120px pour la largeur.
+
+// Utilisation d'une mixin avec des paramètres par défaut :
+// Lorsque vous utilisez une mixin avec des paramètres par défaut, vous pouvez appeler la mixin sans fournir de valeurs pour les paramètres. Les valeurs par défaut seront automatiquement utilisées. Par exemple :
+
+
+button {
+  @include bouton2;
+}
+// Dans cet exemple, nous avons inclus la mixin "bouton" dans le sélecteur .mon-bouton sans spécifier de valeurs pour les paramètres. Les valeurs par défaut de la mixin seront utilisées.

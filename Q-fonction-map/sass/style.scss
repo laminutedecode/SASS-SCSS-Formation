@@ -1,0 +1,33 @@
+// Sass (Syntactically Awesome Style Sheets) propose également une fonctionnalité appelée map qui permet de travailler avec des ensembles de paires clé-valeur dans Sass. Les maps sont des structures de données qui associent une clé à une valeur et offrent une flexibilité accrue pour stocker et accéder à des informations structurées dans vos stylesheets.
+
+// Voici un exemple pour expliquer l'utilisation de map en Sass :
+
+
+$colors: (
+  primary: #007bff,
+  secondary: #6c757d,
+  success: #28a745,
+  danger: #dc3545,
+  warning: #ffc107
+);
+
+.btn {
+  background-color: map-get($colors, warning); // Accède à la couleur primaire dans la map
+  color: map-get($colors, secondary); // Accède à la couleur secondaire dans la map
+}
+
+.alert {
+  $colors: map-merge($colors, (info: #17a2b8)); // Fusionne une nouvelle paire clé-valeur dans la map existante
+  
+  background-color: map-get($colors, danger); // Accède à la couleur danger dans la map mise à jour
+  color: map-get($colors, info); // Accède à la couleur info dans la map mise à jour
+}
+// Dans cet exemple, nous utilisons une map $colors qui contient différentes couleurs associées à des clés spécifiques telles que primary, secondary, success, danger et warning.
+
+// Dans la classe .btn, nous utilisons la fonction map-get() pour accéder à la couleur associée à la clé primary dans la map $colors et l'appliquer comme couleur d'arrière-plan. De même, nous utilisons map-get() pour accéder à la couleur associée à la clé secondary et l'appliquer comme couleur de texte.
+
+// Dans la classe .alert, nous utilisons la fonction map-merge() pour fusionner une nouvelle paire clé-valeur dans la map $colors. La nouvelle paire clé-valeur est (info: #17a2b8) qui associe la couleur #17a2b8 à la clé info. Ainsi, la map $colors est mise à jour avec cette nouvelle paire clé-valeur.
+
+// Ensuite, nous utilisons map-get() pour accéder à la couleur associée à la clé danger dans la map mise à jour et l'appliquer comme couleur d'arrière-plan dans la classe .alert. De plus, nous utilisons map-get() pour accéder à la couleur associée à la clé info et l'appliquer comme couleur de texte.
+
+// L'utilisation de map en Sass offre une puissante structure de données pour organiser et accéder à des informations structurées dans vos stylesheets. Vous pouvez facilement ajouter, modifier et accéder aux valeurs en utilisant les fonctions dédiées telles que map-get() et map-merge(), ce qui facilite la gestion des données dans vos styles.

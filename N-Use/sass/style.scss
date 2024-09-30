@@ -1,0 +1,11 @@
+@use "couleurs.scss" as couleurs;
+
+.element {
+  color: couleurs.$couleur-principale;
+  background-color: couleurs.$couleur-secondaire;
+}
+
+// Dans cet exemple, nous avons créé un fichier couleurs.scss où nous définissons les variables $couleur-principale et $couleur-secondaire. Dans le fichier styles.scss, nous utilisons la directive @use pour importer le module couleurs.scss avec l'alias couleurs. Nous pouvons ensuite accéder aux variables définies dans le module en utilisant la syntaxe couleurs.$nom-variable.
+
+// Cela signifie que la classe .element aura une couleur de texte blue et une couleur de fond green, qui sont les valeurs des variables définies dans le module couleurs.scss.
+

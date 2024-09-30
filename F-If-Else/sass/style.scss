@@ -1,0 +1,51 @@
+.element {
+  width: 250px;
+  height: 250px;
+}
+
+// Les directives @if et @else sont des fonctionnalités de contrôle de flux dans Sass qui permettent d'effectuer des tests conditionnels et d'exécuter des blocs de code en fonction des résultats de ces tests. Cela permet de rendre le code plus dynamique et de personnaliser les styles en fonction des conditions spécifiées.
+
+// Voici comment utiliser @if et @else en Sass :
+
+// Directive @if :
+// La directive @if permet de tester une condition et d'exécuter un bloc de code si la condition est évaluée comme vraie. Voici la syntaxe de base :
+
+
+@if condition {
+  // Code à exécuter si la condition est vraie
+}
+// Par exemple, vous pouvez utiliser @if pour appliquer un style spécifique uniquement si une condition est remplie. Voici un exemple :
+
+$couleur: red;
+
+.element {
+  @if $couleur == red {
+    background-color: $couleur;
+  }
+}
+// Dans cet exemple, si la variable $couleur est égale à red, la directive @if évalue la condition comme vraie et le bloc de code à l'intérieur de @if est exécuté. Ainsi, la classe .element aura une couleur de fond rouge.
+
+// Directive @else :
+// La directive @else est utilisée avec @if pour spécifier un bloc de code à exécuter si la condition testée avec @if est évaluée comme fausse. Voici la syntaxe de base :
+
+
+@if condition {
+  // Code à exécuter si la condition est vraie
+} @else {
+  // Code à exécuter si la condition est fausse
+}
+// Par exemple, vous pouvez utiliser @else pour définir un style par défaut si la condition @if n'est pas remplie. Voici un exemple :
+
+
+$couleur: green;
+
+.element {
+  @if $couleur == red {
+    background-color: $couleur;
+  } @else {
+    background-color: blue;
+  }
+}
+// Dans cet exemple, si la variable $couleur n'est pas égale à red, la condition de @if est évaluée comme fausse et le bloc de code à l'intérieur de @else est exécuté. Ainsi, la classe .element aura une couleur de fond bleue.
+
+// La combinaison de @if et @else permet de contrôler le flux d'exécution du code Sass en fonction de conditions spécifiques. Cela permet de personnaliser les styles en fonction de variables ou d'autres conditions définies dans votre code.

@@ -1,0 +1,27 @@
+.box {
+  height: 200px;
+  background: #000;
+  margin: 1rem;
+}
+
+.element-1 {
+  width: 50px;
+}
+
+.element-2 {
+  width: 100px;
+}
+
+.element-3 {
+  width: 150px;
+}
+
+.element-4 {
+  width: 200px;
+}
+
+.element-5 {
+  width: 250px;
+}
+
+/*# sourceMappingURL=style.css.map */

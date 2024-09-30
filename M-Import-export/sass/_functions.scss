@@ -1,0 +1,4 @@
+@function calculer-taille-police($taille-base, $facteur) {
+    $taille-police: $taille-base * $facteur;
+    @return $taille-police;
+  }

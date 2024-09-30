@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.bouton, .mon-bouton {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.mon-bouton {
+  font-size: 16px;
+}
+
+.bordure, .mon-bouton {
+  border: 5px solid red;
+  outline: none;
+}
+
+.mon-bouton {
+  /* Autres règles spécifiques */
+}
+
+/*# sourceMappingURL=style.css.map */

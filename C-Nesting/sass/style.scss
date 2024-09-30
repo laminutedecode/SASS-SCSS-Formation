@@ -1,0 +1,47 @@
+// Le nesting, également appelé imbrication, est l'une des fonctionnalités clés de Sass qui permet d'écrire du code CSS plus propre et plus lisible en organisant les sélecteurs et les règles de style de manière hiérarchique.
+
+// En Sass, vous pouvez imbriquer des sélecteurs CSS à l'intérieur d'autres sélecteurs, ce qui reflète la structure hiérarchique des éléments HTML. Voici comment utiliser le nesting :
+
+// Imbrication des sélecteurs :
+// Pour imbriquer un sélecteur à l'intérieur d'un autre, vous écrivez simplement le sélecteur enfant à l'intérieur du sélecteur parent, en utilisant la syntaxe {} pour délimiter le bloc de règles. Par exemple :
+
+
+.conteneur {
+  background-color: salmon;
+  padding: 2rem;
+  margin-bottom: 1rem;
+
+  h1 {
+    font-size: 24px;
+    color: #24147c;
+  }
+
+  p {
+    font-size: 16px;
+    color: #d35275;
+  }
+}
+// Dans cet exemple, les sélecteurs h1 et p sont imbriqués à l'intérieur du sélecteur .conteneur. Cela signifie que les styles définis pour h1 et p seront appliqués uniquement aux éléments h1 et p qui se trouvent à l'intérieur d'un élément ayant la classe .conteneur.
+
+// Imbrication des règles de style :
+// En plus des sélecteurs, vous pouvez également imbriquer les règles de style à l'intérieur d'une déclaration de propriété. Cela permet de regrouper des styles liés ensemble. Par exemple :
+
+
+.bouton {
+  font-size: 16px;
+  color: #ffffff;
+  background: #000;
+  padding: .5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ff0000;
+  }
+
+  &.actif {
+    background-color: #00ff00;
+  }
+}
+// Dans cet exemple, les règles :hover et .actif sont imbriquées à l'intérieur de la règle .bouton. Cela signifie que les styles définis pour :hover et .actif seront appliqués lorsque l'élément .bouton sera survolé ou aura la classe .actif.
+
+// Le nesting en Sass permet de mieux organiser et structurer votre code CSS en reflétant la hiérarchie des éléments HTML. Cela rend le code plus lisible, facilite la compréhension de la structure et réduit les répétitions. Cependant, il est important de ne pas abuser du nesting pour éviter un sélecteur CSS trop spécifique et complexe, qui peut entraîner une mauvaise performance et une difficulté accrue lors de la maintenance du code.

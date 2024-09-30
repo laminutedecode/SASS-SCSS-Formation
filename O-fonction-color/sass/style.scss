@@ -1,0 +1,24 @@
+// La fonction color() est utilisée pour manipuler et ajuster les couleurs dans Sass. Elle peut être utilisée pour créer de nouvelles couleurs en modifiant les valeurs de luminosité, de saturation et d'opacité, ainsi que pour effectuer des opérations mathématiques sur les couleurs existantes.
+
+// Voici un exemple d'utilisation de color() dans un extrait de code Sass :
+
+$primary-color: #007bff;
+
+
+
+.btn {
+  background-color: $primary-color;
+  color: rgba($primary-color, 0.8); // Utilise la fonction rgba() pour définir l'opacité
+}
+
+.btn:hover {
+  background-color: lighten($primary-color, 20%);
+}
+
+.btn:active {
+  background-color: darken($primary-color, 10%);
+}
+
+// Dans cet exemple, nous utilisons la fonction rgba() pour définir l'opacité de la couleur principale. La valeur 0.8 représente l'opacité de 80%. Ainsi, la couleur de texte dans la classe .btn sera légèrement transparente avec une opacité de 80%.
+
+// L'utilisation de color() et d'autres fonctions de manipulation des couleurs Sass permet une gestion plus avancée et dynamique des couleurs dans vos stylesheets, offrant ainsi plus de flexibilité et de contrôle sur l'apparence visuelle de vos éléments.

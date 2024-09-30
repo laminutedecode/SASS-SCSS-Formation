@@ -1,0 +1,31 @@
+button {
+  background-color: #ff0000;
+  width: 120px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: #ffffff;
+  text-align: center;
+}
+
+button {
+  background-color: #00ff00;
+  width: 200px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: #ffffff;
+  text-align: center;
+}
+
+button {
+  background-color: #ff0000;
+  width: 500px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

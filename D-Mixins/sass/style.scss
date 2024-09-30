@@ -1,0 +1,30 @@
+// Les mixins sont l'une des fonctionnalités clés de Sass qui permettent de définir des ensembles de règles de style réutilisables. Ils vous permettent d'écrire du code CSS générique et de l'inclure dans différents sélecteurs, ce qui facilite la maintenance et la réduction de la redondance du code.
+
+// Voici comment utiliser les mixins sans paramètre en Sass :
+
+// Définition d'une mixin :
+// Pour définir une mixin sans paramètre, vous utilisez le mot-clé @mixin, suivi du nom de la mixin et d'un bloc de règles de style. Par exemple :
+
+
+@mixin centrage-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// Dans cet exemple, nous avons défini une mixin appelée "centrage-horizontal" qui contient des règles de style pour centrer horizontalement les éléments.
+
+// Utilisation d'une mixin :
+// Pour utiliser une mixin, vous utilisez le mot-clé @include suivi du nom de la mixin. Vous pouvez inclure une mixin dans un sélecteur ou un autre mixin. Par exemple :
+
+
+.conteneur {
+  @include centrage-horizontal;
+  width: 500px;
+  height: 500px;
+  background: salmon;
+}
+// Dans cet exemple, nous avons inclus la mixin "centrage-horizontal" dans le sélecteur .conteneur. Cela signifie que les règles de style définies dans la mixin seront appliquées à l'élément .conteneur, en plus des autres règles spécifiées spécifiquement pour cet élément.
+
+// Vous pouvez inclure la même mixin dans plusieurs sélecteurs, ce qui permet de réutiliser facilement les règles de style sans avoir à les copier-coller à plusieurs endroits.
+
+// Les mixins sans paramètre en Sass sont particulièrement utiles pour regrouper des ensembles de règles de style communes et les réutiliser à plusieurs endroits. Cela facilite la maintenance du code, car vous pouvez mettre à jour les règles de style dans une seule définition de mixin et les modifications seront appliquées automatiquement partout où la mixin est utilisée.

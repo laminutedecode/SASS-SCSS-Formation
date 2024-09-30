@@ -1,0 +1,29 @@
+.conteneur {
+  background-color: salmon;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+.conteneur h1 {
+  font-size: 24px;
+  color: #24147c;
+}
+.conteneur p {
+  font-size: 16px;
+  color: #d35275;
+}
+
+.bouton {
+  font-size: 16px;
+  color: #ffffff;
+  background: #000;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.bouton:hover {
+  background-color: #ff0000;
+}
+.bouton.actif {
+  background-color: #00ff00;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,43 @@
+// La directive @extend en Sass permet de réutiliser les sélecteurs et les règles de style d'une classe existante et de les appliquer à une autre classe. Cela permet d'éviter la duplication de code et favorise une approche DRY (Don't Repeat Yourself) dans la définition des styles.
+
+// Voici comment utiliser @extend en Sass :
+
+// Définition d'une classe à étendre :
+// Tout d'abord, vous devez définir une classe que vous souhaitez réutiliser. Par exemple :
+
+
+.bouton {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+// Dans cet exemple, nous avons défini une classe .bouton avec des règles de style spécifiques.
+
+// Utilisation de @extend pour réutiliser une classe :
+// Ensuite, vous pouvez utiliser @extend pour réutiliser les styles de la classe existante et les appliquer à une autre classe. Voici la syntaxe :
+
+
+.mon-bouton {
+  @extend .bouton;
+  font-size: 16px;
+}
+// Dans cet exemple, nous avons créé une nouvelle classe .mon-bouton et utilisé @extend .bouton pour étendre les styles de la classe .bouton. Cela signifie que toutes les règles de style de .bouton seront appliquées à .mon-bouton, en plus des autres règles spécifiées spécifiquement pour .mon-bouton.
+
+// Notez que les sélecteurs de la classe originale (.bouton) sont également inclus dans le sélecteur étendu (.mon-bouton). Cela permet de conserver la spécificité des sélecteurs et d'éviter les problèmes de cascades indésirables.
+
+// Vous pouvez également utiliser @extend pour réutiliser plusieurs classes en même temps :
+
+.bordure {
+  border: 5px solid red;
+  outline: none;
+}
+
+.mon-bouton {
+  @extend .bouton;
+  @extend .bordure;
+  /* Autres règles spécifiques */
+}
+// Cela permet de réutiliser les styles de plusieurs classes dans une seule classe.
+
+// L'utilisation de @extend en Sass est utile pour réutiliser les styles existants et éviter la duplication de code. Cela améliore la maintenabilité du code en centralisant les styles communs et en les appliquant à plusieurs endroits. Cependant, il est important d'utiliser @extend avec prudence et de comprendre son impact sur la génération du CSS final, car cela peut entraîner une augmentation de la complexité et de la spécificité des sélecteurs CSS.

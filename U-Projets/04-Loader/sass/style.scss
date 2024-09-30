@@ -1,0 +1,32 @@
+$dot-count: 3;
+$dot-size: 20px;
+$dot-spacing: 10px;
+$animation-duration: 1s;
+$animation-delay: 0.2s;
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  @for $i from 1 through $dot-count {
+    $delay: $i * $animation-delay;
+    
+    &__dot:nth-child(#{$i}) {
+      width: $dot-size;
+      height: $dot-size;
+      border-radius: 50%;
+      background-color: #333;
+      margin: 0 $dot-spacing / 2;
+      animation: blink-animation $animation-duration infinite alternate;
+      animation-delay: $delay;
+    }
+  }
+}
+
+@keyframes blink-animation {
+  to {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,31 @@
+// La directive @while en Sass permet de créer une boucle basée sur une condition, c'est-à-dire qu'elle répète un bloc de code tant que la condition spécifiée est vraie. Voici comment utiliser @while en Sass, avec un exemple d'utilisation et le code HTML correspondant :
+
+// Utilisation de la boucle @while :
+// La syntaxe de base de la boucle @while est la suivante :
+
+// @while <condition> {
+//   // Code à exécuter tant que la condition est vraie
+// }
+
+// Le code à l'intérieur du bloc de la boucle sera répété tant que la <condition> spécifiée est évaluée comme vraie.
+
+// Par exemple, considérons l'exemple suivant :
+
+.box {
+  height: 200px;
+  background: #000;
+  margin: 1rem;
+}
+
+$i: 1;
+@while $i <= 5 {
+  .element-#{$i} {
+    width: 50px * $i;
+  }
+  $i: $i + 1;
+}
+// Dans cet exemple, nous avons initialisé une variable $i à 1. La boucle @while continuera à s'exécuter tant que la variable $i est inférieure ou égale à 5. À chaque itération, une classe .element-n est générée, où n représente la valeur de $i. La propriété width est définie en utilisant la valeur de $i pour créer une séquence de largeurs croissantes.
+
+// Cela signifie que chaque élément <div> aura une largeur correspondant à la valeur de $i multipliée par 50px, générant ainsi une séquence de largeurs croissantes tant que $i est inférieur ou égal à 5.
+
+// La directive @while en Sass offre une flexibilité pour créer des boucles basées sur des conditions spécifiques, ce qui permet d'exécuter un bloc de code de manière répétée jusqu'à ce que la condition soit fausse. Cela peut être utile pour générer des styles ou effectuer des calculs itératifs plus complexes.

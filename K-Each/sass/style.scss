@@ -1,0 +1,26 @@
+// La directive @each en Sass permet de parcourir des listes ou des paires clé-valeur et d'exécuter un bloc de code pour chaque élément de la liste ou chaque paire clé-valeur. Voici comment utiliser @each en Sass, avec un exemple d'utilisation et le code HTML correspondant :
+
+// Utilisation de la boucle @each :
+// La syntaxe de base de la boucle @each est la suivante :
+
+// @each $variable in <liste> {
+//   // Code à exécuter pour chaque élément de la liste
+// }
+
+// La variable $variable est utilisée pour stocker la valeur courante de l'élément de la liste à chaque itération. La liste peut être une liste de valeurs ou une liste de paires clé-valeur.
+
+// Par exemple, considérons l'exemple suivant avec une liste de couleurs :
+
+
+$couleurs: red, green, blue;
+
+@each $couleur in $couleurs {
+  .element-#{$couleur} {
+    color: $couleur;
+  }
+}
+// Dans cet exemple, nous avons une liste de couleurs $couleurs contenant les valeurs red, green et blue. La boucle @each itérera sur chaque élément de la liste, stockant la valeur dans la variable $couleur. À chaque itération, une classe .element-nom-de-couleur est générée, où nom-de-couleur est la valeur actuelle de la variable $couleur. La propriété color est définie en utilisant la valeur de $couleur.
+
+// Cela signifie que chaque élément <div> aura une couleur de texte correspondant à la valeur de la variable $couleur à chaque itération de la boucle @each.
+
+// La directive @each en Sass est utile pour itérer sur des listes ou des paires clé-valeur, permettant ainsi de générer du code CSS répétitif en fonction des éléments de la liste ou des paires clé-valeur. Cela facilite la réutilisation et la gestion du code, en évitant la duplication et en favorisant la flexibilité.

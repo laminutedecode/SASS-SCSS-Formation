@@ -1,0 +1,32 @@
+$slide-duration: 7s; // Durée de chaque diapositive
+$transition-duration: 3s; // Durée de la transition entre les diapositives
+
+.slider {
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden; // Pour masquer les éléments qui dépassent
+}
+
+.slider-container {
+  width: 100%; 
+  white-space: nowrap;
+  animation: slideAnimation ($slide-duration * 3 + $transition-duration) infinite; // Animation de glissement
+}
+
+.slider-slide {
+  display: inline-block;
+  width: 100%;
+  transition: transform $transition-duration; // Transition pour l'effet de glissement
+}
+
+@keyframes slideAnimation {
+  0%, 100% {
+    transform: translateX(0); // Position de départ et position finale
+  }
+  33.33%, 66.67% {
+    transform: translateX(-100%); // Glissement vers la gauche
+  }
+  50% {
+    transform: translateX(-200%); // Glissement vers la gauche
+  }
+}

@@ -1,0 +1,41 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.loader__dot:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #333;
+  margin: 0 5px;
+  animation: blink-animation 1s infinite alternate;
+  animation-delay: 0.2s;
+}
+.loader__dot:nth-child(2) {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #333;
+  margin: 0 5px;
+  animation: blink-animation 1s infinite alternate;
+  animation-delay: 0.4s;
+}
+.loader__dot:nth-child(3) {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #333;
+  margin: 0 5px;
+  animation: blink-animation 1s infinite alternate;
+  animation-delay: 0.6s;
+}
+
+@keyframes blink-animation {
+  to {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

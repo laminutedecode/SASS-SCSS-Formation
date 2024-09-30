@@ -1,0 +1,38 @@
+// La directive @function en Sass permet de définir des fonctions personnalisées qui peuvent effectuer des calculs, manipuler des valeurs et renvoyer des résultats. Les fonctions Sass sont similaires aux fonctions que l'on trouve dans d'autres langages de programmation et elles sont utiles pour organiser et réutiliser le code.
+
+// Voici comment utiliser @function en Sass :
+
+// Définition d'une fonction :
+
+
+// Vous devez spécifier un nom pour la fonction et les paramètres entre parenthèses. Vous pouvez avoir autant de paramètres que nécessaire, séparés par des virgules. Le code de la fonction est écrit à l'intérieur des accolades. Vous utilisez @return pour renvoyer une valeur depuis la fonction.
+
+
+@function calculer-taille-police($taille-base, $facteur) {
+    $taille-police: $taille-base * $facteur;
+    @return $taille-police;
+  }
+
+  
+// /Cette fonction calculer-taille-police prend deux paramètres : $taille-base qui représente la taille de police de base et $facteur qui représente le facteur par lequel la taille de police sera multipliée. La fonction calcule la taille de police en multipliant la taille de base par le facteur, puis renvoie cette valeur.
+
+// Et voici comment nous pouvons utiliser la fonction pour calculer la taille de police des éléments HTML :
+
+$taille-base: 16px;
+$facteur-titre: 2;
+$facteur-paragraphe: 1.5;
+
+h1 {
+  font-size: calculer-taille-police($taille-base, $facteur-titre);
+}
+
+p {
+  font-size: calculer-taille-police($taille-base, $facteur-paragraphe);
+}
+
+
+// Dans cet exemple, nous avons défini la taille de base à 16px. Ensuite, nous avons spécifié différents facteurs de taille de police pour les titres ($facteur-titre) et les paragraphes ($facteur-paragraphe). Nous utilisons la fonction calculer-taille-police pour calculer la taille de police souhaitée en passant les arguments appropriés.
+
+// Cela signifie que le titre (<h1>) aura une taille de police de 32px (calculée en multipliant la taille de base 16px par le facteur 2), et le paragraphe (<p>) aura une taille de police de 24px (calculée en multipliant la taille de base 16px par le facteur 1.5).
+
+// De cette manière, en utilisant des fonctions Sass, nous pouvons calculer des valeurs de style de manière dynamique et réutilisable, ce qui facilite la gestion cohérente et flexible des styles dans nos projets.

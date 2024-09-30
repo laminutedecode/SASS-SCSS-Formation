@@ -1,0 +1,63 @@
+// En Sass, les directives @warn, @debug et @error sont utilisées pour afficher des messages de débogage ou pour générer des erreurs personnalisées lors de la compilation. Voici une explication de chaque directive :
+
+// @warn :
+
+// La directive @warn permet d'afficher un avertissement (warning) lors de la compilation du code Sass.
+
+// Elle est utilisée pour afficher des informations utiles ou des avertissements concernant certaines conditions ou configurations spécifiques.
+
+// Les avertissements sont généralement utilisés pour informer les développeurs de problèmes potentiels ou pour fournir des conseils lors du développement.
+
+// Lorsque la directive @warn est exécutée, le message spécifié est affiché dans la console lors de la compilation du code Sass, mais la compilation se poursuit normalement.
+
+// Voici un exemple d'utilisation de @warn :
+
+
+@mixin calculate-width($width) {
+  @if $width < 0 {
+    @warn "La largeur spécifiée est inférieure à zéro.";
+  }
+
+  width: $width;
+}
+// @debug :
+
+// La directive @debug est utilisée pour afficher des messages de débogage lors de la compilation du code Sass.
+
+// Elle est principalement utilisée pour vérifier la valeur des variables ou des expressions pendant le développement.
+
+// Lorsque la directive @debug est exécutée, le message spécifié ainsi que la valeur de la variable ou de l'expression sont affichés dans la console.
+
+// Contrairement à @warn, @debug est souvent utilisé temporairement pour le débogage et peut être retiré ou commenté une fois que le problème est résolu.
+
+// Voici un exemple d'utilisation de @debug :
+
+
+$primary-color: #ff0000;
+
+@debug "La couleur principale est : #{$primary-color}.";
+
+
+// @error :
+
+// La directive @error est utilisée pour générer une erreur personnalisée lors de la compilation du code Sass.
+
+// Elle est utilisée pour signaler une condition d'erreur spécifique et arrêter la compilation.
+
+// Lorsque la directive @error est exécutée, le message spécifié est affiché dans la console et la compilation est interrompue.
+
+// @error est généralement utilisé pour indiquer une erreur critique qui nécessite une correction immédiate avant de poursuivre la compilation.
+
+// Voici un exemple d'utilisation de @error :
+
+
+@mixin calculate-width($width) {
+  @if $width < 0 {
+    @error "La largeur spécifiée ne peut pas être inférieure à zéro.";
+  }
+
+  width: $width;
+}
+// Si la variable $width est inférieure à zéro, une erreur sera générée avec le message spécifié, et la compilation sera interrompue.
+
+// Ces directives de débogage @warn, @debug et @error sont utiles pour vérifier l'état du code et afficher des informations importantes lors de la compilation du code Sass. Elles peuvent vous aider à détecter les problèmes, à diagnostiquer les erreurs et à améliorer votre processus de développement.

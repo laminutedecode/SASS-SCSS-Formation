@@ -1,0 +1,31 @@
+// La boucle @for en Sass permet de répéter un bloc de code un certain nombre de fois, en itérant sur une séquence de valeurs. Cela peut être utile pour générer des styles répétitifs ou pour effectuer des calculs incrémentiels. Voici comment utiliser la boucle @for en Sass, avec un exemple d'utilisation et le code HTML correspondant :
+
+// Utilisation de la boucle @for :
+// La syntaxe de base de la boucle @for est la suivante :
+
+// @for $variable from <début> through <fin> {
+//   // Code à exécuter à chaque itération
+// }
+
+
+// La variable $variable est utilisée pour stocker la valeur courante de l'itération, et les bornes de la boucle sont définies par les valeurs <début> et <fin>. L'instruction through est utilisée pour inclure la valeur finale dans la séquence.
+
+// Par exemple, considérons l'exemple suivant :
+
+.box {
+  margin: 1rem;
+  background: #000;
+  height: 200px;
+}
+
+@for $i from 1 through 3 {
+  .element-#{$i} {
+    width: 100px * $i;
+  }
+}
+// Dans cet exemple, la boucle @for itère sur les valeurs de 1 à 3. À chaque itération, une classe .element-n est générée, où n représente la valeur de l'itération. Dans ce cas, les classes .element-1, .element-2 et .element-3 seront générées. La propriété width est définie en utilisant la valeur de l'itération pour créer une séquence de largeurs croissantes.
+
+// Cela signifie que chaque élément <div> aura une largeur correspondant à la valeur de l'itération multipliée par 100px, générant ainsi une séquence de largeurs croissantes.
+
+// La boucle @for en Sass permet de générer dynamiquement du code CSS en fonction de valeurs itératives, offrant ainsi une plus grande flexibilité et une réduction de la duplication de code. Elle est particulièrement utile lorsque vous avez besoin de générer des séquences ou d'effectuer des calculs itératifs.
+
